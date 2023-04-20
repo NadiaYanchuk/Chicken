@@ -28,19 +28,7 @@ document.addEventListener("click", function (event) {
 });
 
 //Анимация для изображениЙ
-const homeImg = document.querySelector(".home__img");
 const aboutImg = document.querySelector(".about__img");
-
-homeImg.addEventListener("mouseenter", () => {
-  homeImg.style.transform = "scale(1.1)";
-  homeImg.style.transition = "transform 0.5s ease-in-out";
-});
-
-homeImg.addEventListener("mouseleave", () => {
-  homeImg.style.transform = "scale(1)";
-  homeImg.style.transition = "transform 0.5s ease-in-out";
-});
-
 aboutImg.addEventListener("mouseenter", () => {
   aboutImg.style.transform = "scale(1.05)";
   aboutImg.style.transition = "transform 0.5s ease-in-out";
@@ -49,6 +37,20 @@ aboutImg.addEventListener("mouseenter", () => {
 aboutImg.addEventListener("mouseleave", () => {
   aboutImg.style.transform = "scale(1)";
   aboutImg.style.transition = "transform 0.5s ease-in-out";
+});
+
+// Параллакс эффект
+const imgParallax = document.querySelector('.home__img-parallax');
+const imgParallaxRect = imgParallax.getBoundingClientRect(); // получаем размеры и позицию элемента .home__img-parallax
+
+document.addEventListener('mousemove', (e) => {
+  const x = e.clientX; // получаем координаты курсора мыши по оси X
+  const y = e.clientY; // получаем координаты курсора мыши по оси Y
+
+  const newX = (imgParallaxRect.width / 2 - x) / 30; // вычисляем новое положение по оси X
+  const newY = (imgParallaxRect.height / 2 - y) / 30; // вычисляем новое положение по оси Y
+
+  imgParallax.style.transform = `translate(${newX}px, ${newY}px)`; // задаем новое положение элемента .home__img-parallax
 });
 
 /*=============== ПОКАЗАТЬ МЕНЮ ===============*/

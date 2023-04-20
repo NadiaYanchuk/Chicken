@@ -268,6 +268,11 @@ body.dark-theme {
   color: var(--first-color);
 }
 
+.active-link {
+  position: relative;
+  color: var(--first-color);
+}
+
 @media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;
@@ -323,11 +328,6 @@ body.dark-theme {
   box-shadow: 0 1px 4px hsla(var(--hue), 4%, 15%, .1);
 }
 
-.active-link {
-  position: relative;
-  color: var(--first-color);
-}
-
 .active-link::after {
   content: '';
   position: absolute;
@@ -353,8 +353,17 @@ body.dark-theme {
 }
 
 .home__img {
-  width: 200px;
+  width: 100%;
+  max-width: 280px;
   justify-self: center;
+  z-index: var(--z-tooltip); 
+}
+
+.home__img-parallax {
+  position: absolute;
+  top: -2rem;
+  right: 10%;
+  z-index: var(--z-fixed); 
 }
 
 .home__title {

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Лапушка</title>
+</head>
+
+<body onload="removeLoading()">
+    <!--==================== ЗАГРУЗКА ====================-->
+    <!-- Источник гифки: https://codepen.io/noplama/pen/MBJapE -->
+    <div class="loading">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            width="100px" height="100px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;"
+            id="hen_story">
+
+            <g id="hen_feet">
+                <line class="stroke_path" x1="54.4" y1="72.1" x2="54.4" y2="82" />
+                <line class="stroke_path" x1="48.9" y1="82" x2="58.3" y2="82" />
+            </g>
+            <g id="hen">
+                <g id="hen_body">
+                    <g id="hen_comb">
+                        <circle class="fill_path" cx="35.7" cy="22.2" r="3.4" />
+                        <circle class="fill_path" cx="42" cy="20.8" r="3.4" />
+                        <circle class="fill_path" cx="48" cy="23.1" r="3.4" />
+                    </g>
+                    <circle class="fill_path" cx="29.4" cy="33" r="2.5" />
+                    <circle class="fill_path" cx="29.7" cy="38.1" r="2.5" />
+                    <path class="fill_path"
+                        d="M72.8,51.2h-9.6c-6.9,0-12.5-5.6-12.5-12.5V25.6c-2.1-2.3-5.1-3.7-8.5-3.7c-6.4,0-11.6,5.2-11.6,11.6v12.9&#10;&#9;&#9;c0,0.4,0,0.8,0.1,1.3c0,0.2,0,0.5,0,0.7c0,13,12.1,23.5,27,23.5c14.9,0,27-10.5,27-23.5C84.7,48.5,78.2,51.2,72.8,51.2z" />
+                    <circle id="hen_eye" cx="40.5" cy="30.5" r="2.5" />
+                    <path class="fill_path" d="M50.8,58.8" />
+                    <path class="fill_path" d="M55.9,58.8" />
+                    <path class="fill_path" d="M50.8,58.8c0,1.4,1.1,2.5,2.5,2.5c1.4,0,2.5-1.1,2.5-2.5" />
+                    <path class="fill_path" d="M55.8,58.8c0,1.4,1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5" />
+                    <path class="fill_path" d="M58.4,56.3" />
+                    <path class="fill_path" d="M60.8,58.8c0,1.4,1.1,2.5,2.6,2.5c1.4,0,2.5-1.1,2.5-2.5" />
+                    <path class="fill_path" d="M63.4,56.3" />
+                    <path class="fill_path" d="M54,71.7" />
+                    <path class="fill_path" d="M48.5,81.7" />
+                </g>
+            </g>
+            <g id="egg">
+                <g id="egg_fall">
+                    <path class="fill_path"
+                        d="M78.5,77c-0.1,2.8,1.8,5.2,4.4,5.3c2.6,0.1,4.8-2,4.9-4.8c0.1-2.8-2.1-6.5-4.7-6.6&#10;&#9;&#9;C80.5,70.8,78.7,74.2,78.5,77z" />
+                </g>
+            </g>
+        </svg>
+    </div>
+
+
+    <div id="content">
+        <!--==================== МЕНЮ ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    птички
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Главная</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">О компании</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#products" class="nav__link">Продаём</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#faqs" class="nav__link">Вопросы</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Контакты</a>
+                        </li>
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+
+                <div class="nav__btns">
+                    <!-- Выбор темы -->
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+            <!--==================== ГЛАВНАЯ ====================-->
+            <section class="home" id="home">
+                <div class="home__container container grid">
+                    <img src="assets/img/home.png" alt="" class="home__img">
+
+                    <div class="home__data">
+                        <h1 class="home__title">
+                            лапушка
+                        </h1>
+                        <p class="home__description">
+                            Выращивание курочек - это занимательное и полезное хобби, которое подходит
+                            для семей с детьми и всех, кто ценит здоровый образ жизни.
+                        </p>
+                        <a href="#about" class="button button--flex">
+                            Посмотреть курочек <i class="ri-arrow-right-down-line button__icon"></i>
+                        </a>
+                    </div>
+
+                    <div class="home__social">
+                        <div class="home__social-links">
+                            <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a href="https://twitter.com/" target="_blank" class="home__social-link">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== О КОМПАНИИ ====================-->
+            <section class="about section container" id="about">
+                <div class="about__container grid">
+                    <img src="assets/img/about.jpg" alt="" class="about__img">
+
+                    <div class="about__data">
+                        <h2 class="section__title about__title">
+                            Кто мы <br> на самом деле:
+                        </h2>
+
+                        <p class="about__description">
+                            Мы - компания, специализирующаяся на продаже живых курочек в качестве домашних питомцев.
+                            Наша миссия заключается в том, чтобы предоставлять любящие дома нашим пернатым друзьям.
+                        </p>
+
+                        <div class="about__details">
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                У нас более 400 безупречных отзывов, и наши клиенты доверяют нашему процессу выращивания
+                                и доставки каждый раз.
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                Мы предоставляем руководства по защите и уходу за вашими курочками.
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                Мы всегда приезжаем на проверку после продажи и следим за безопасностью.
+                            </p>
+                        </div>
+
+                        <a href="#products" class="button--link button--flex">
+                            Начните покупки сейчас! <i class="ri-arrow-right-down-line button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== РЕКОМЕНДАЦИИ ====================-->
+            <section class="steps section container">
+                <div class="steps__bg">
+                    <h2 class="section__title-center steps__title">
+                        Как завести курочек<br> в качестве домашних питомцев
+                    </h2>
+
+                    <div class="steps__container grid">
+                        <div class="steps__card">
+                            <div class="steps__card-number">01</div>
+                            <h3 class="steps__card-title">Выбор породы</h3>
+                            <p class="steps__card-description">
+                                Определитесь с тем, какая порода курочек вам больше подходит, их огромное множество.
+                            </p>
+                        </div>
+
+                        <div class="steps__card">
+                            <div class="steps__card-number">02</div>
+                            <h3 class="steps__card-title">Обустройство курятника</h3>
+                            <p class="steps__card-description">
+                                Если вы приобретаете больше 1 курочки, стоит подготовить комфортное жилье для ваших
+                                питомицев: просторный курятник с гнездами.
+                            </p>
+                        </div>
+
+                        <div class="steps__card">
+                            <div class="steps__card-number">03</div>
+                            <h3 class="steps__card-title">Уход за курочками</h3>
+                            <p class="steps__card-description">
+                                Обеспечьте своих курочек кормом, водой и регулярным уходом. Взаимодействуйте с ними и
+                                наслаждайтесь их приятной компанией.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== ТОВАРЫ ====================-->
+            <section class="product section container" id="products">
+                <h2 class="section__title-center">
+                    Выбери свою <br> курочку
+                </h2>
+
+                <p class="product__description">
+                    Вот несколько избранных пород наших домашних кур, все они в отличной форме и обладают долгим сроком
+                    жизни.
+                </p>
+
+                <div class="product__container grid">
+                    <article class="product__card">
+                        <div class="product__circle"></div>
+
+                        <img src="assets/img/product1.png" alt="" class="product__img">
+
+                        <h3 class="product__title">Курочка Кохинхин</h3>
+                        <span class="product__price">$19.99</span>
+
+                        <button class="button--flex product__button">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+                    </article>
+
+                    <article class="product__card">
+                        <div class="product__circle"></div>
+
+                        <img src="assets/img/product2.png" alt="" class="product__img">
+
+                        <h3 class="product__title"><br><br><br>Курочка Браун</h3>
+                        <span class="product__price">$11.99</span>
+
+                        <button class="button--flex product__button">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+                    </article>
+
+                    <article class="product__card">
+                        <div class="product__circle"></div>
+
+                        <img src="assets/img/product3.png" alt="" class="product__img">
+
+                        <h3 class="product__title">Курочка Черная</h3>
+                        <span class="product__price">$7.99</span>
+
+                        <button class="button--flex product__button">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+                    </article>
+
+                    <article class="product__card">
+                        <div class="product__circle"></div>
+
+                        <img src="assets/img/product4.png" alt="" class="product__img">
+
+                        <h3 class="product__title"><br>Курочка Белая</h3>
+                        <span class="product__price">$5.99</span>
+
+                        <button class="button--flex product__button">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+                    </article>
+
+                    <article class="product__card">
+                        <div class="product__circle"></div>
+
+                        <img src="assets/img/product5.png" alt="" class="product__img">
+
+                        <h3 class="product__title">Курочка Орпингтон</h3>
+                        <span class="product__price">$10.99</span>
+
+                        <button class="button--flex product__button">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+                    </article>
+
+                    <article class="product__card">
+                        <div class="product__circle"></div>
+
+                        <img src="assets/img/product6.png" alt="" class="product__img">
+
+                        <h3 class="product__title">Курочка Америкауна</h3>
+                        <span class="product__price">$8.99</span>
+
+                        <button class="button--flex product__button">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+                    </article>
+                </div>
+            </section>
+
+            <!--==================== ВОПРОС-ОТВЕТ ====================-->
+            <section class="questions section" id="faqs">
+                <h2 class="section__title-center questions__title container">
+                    Часто задаваемые вопросы <br> о покупке домашних курочек
+                </h2>
+
+                <div class="questions__container container grid">
+                    <div class="questions__group">
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Могу ли я заказать кур онлайн и как это работает?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Да, вы можете заказать курочек онлайн. Нужно выбрать нужную породу кур, указать
+                                    количество и заполнить форму заказа. После этого мы свяжемся с вами для уточнения
+                                    деталей заказа.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Как я могу забрать курочек?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Вы можете забрать курочек у нас на ферме, мы предварительно договоримся о времени и
+                                    дате. Также мы можем организовать доставку в пределах города за дополнительную
+                                    плату.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Как работает доставка?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Мы можем доставить кур к вам домой или на вашу ферму. Доставка оплачивается отдельно
+                                    и зависит от расстояния и количества курочек. Мы договоримся о времени и дате
+                                    доставки, чтобы удобно вам было принять заказ.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="questions__group">
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Можно ли купить только яйца от ваших курочек?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Да, мы также предлагаем свежие яйца от наших курочек. Вы можете купить их на нашей
+                                    ферме или заказать доставку.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Нужно ли мне покупать специальное оборудование?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Нет, не обязательно. Однако, вам может потребоваться купить кормушки, поилки и
+                                    курятники для обеспечения комфортных условий для ваших кур.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Как оплатить заказ?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Мы принимаем оплату наличными и через банковские карты (Visa, PayPal, Discover,
+                                    Mastercard). Вы можете выбрать удобный для вас способ оплаты при оформлении заказа.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== КОНТАКТЫ ====================-->
+            <section class="contact section container" id="contact">
+                <div class="contact__container grid">
+                    <div class="contact__box">
+                        <h2 class="section__title">
+                            Вы можете связаться с нами через сайт <br> или позвонить
+                        </h2>
+
+                        <div class="contact__data">
+                            <div class="contact__information">
+                                <h3 class="contact__subtitle">Можно позвонить по номеру</h3>
+                                <span class="contact__description">
+                                    <i class="ri-phone-line contact__icon"></i>
+                                    +123-456-789
+                                </span>
+                            </div>
+
+                            <div class="contact__information">
+                                <h3 class="contact__subtitle">Напишите на нашу почту</h3>
+                                <span class="contact__description">
+                                    <i class="ri-mail-line contact__icon"></i>
+                                    kurochki@email.com
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="" class="contact__form">
+                        <div class="contact__inputs">
+                            <div class="contact__content">
+                                <input type="email" placeholder=" " class="contact__input">
+                                <label for="" class="contact__label">Email</label>
+                            </div>
+
+                            <div class="contact__content">
+                                <input type="text" placeholder=" " class="contact__input">
+                                <label for="" class="contact__label">Тема</label>
+                            </div>
+
+                            <div class="contact__content contact__area">
+                                <textarea name="message" placeholder=" " class="contact__input"></textarea>
+                                <label for="" class="contact__label">Сообщение</label>
+                            </div>
+                        </div>
+
+                        <button class="button button--flex">
+                            Отправить сообщение
+                            <i class="ri-arrow-right-up-line button__icon"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!--==================== ФУТЕР ====================-->
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <div class="footer__content">
+                    <div class="footer__subscribe">
+                        <input type="email" placeholder="Ваш e-mail" class="footer__input">
+
+                        <button class="button button--flex footer__button">
+                            Подписаться
+                            <i class="ri-arrow-right-up-line button__icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Адрес</h3>
+
+                    <ul class="footer__data">
+                        <li class="footer__information">Кишинев, Молдова</li>
+                        <li class="footer__information">ул. Птицеводов, дом 123</li>
+                        <li class="footer__information">123-456-789</li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Номер</h3>
+
+                    <ul class="footer__data">
+                        <li class="footer__information">+999 888 777</li>
+
+                        <div class="footer__social">
+                            <a href="https://www.facebook.com/" class="footer__social-link">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" class="footer__social-link">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a href="https://twitter.com/" class="footer__social-link">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                        </div>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">
+                        Способы оплаты
+                    </h3>
+
+                    <div class="footer__cards">
+                        <img src="assets/img/card1.png" alt="" class="footer__card">
+                        <img src="assets/img/card2.png" alt="" class="footer__card">
+                        <img src="assets/img/card3.png" alt="" class="footer__card">
+                        <img src="assets/img/card4.png" alt="" class="footer__card">
+                    </div>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Все права, возможно, защищены.</p>
+        </footer>
+        
+        <!--==================== КЛИКИ - ЛАПКИ ====================-->
+        <div id="footprint">
+            <svg width="63" height="69" viewBox="0 0 63 69" fill="none" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="63" height="69" fill="url(#pattern0)" />
+                <defs>
+                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_23_13" transform="scale(0.015873 0.0144928)" />
+                    </pattern>
+                    <image id="image0_23_13" width="63" height="69"
+                        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAABFCAYAAAD95j54AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAATPSURBVHgB7ZtdbttGEMdnSMqq2wRVTlA+toWVKo9JWkA6Qe0T1D1B2xPEOUHbE9g9QZoTSP2w/Va7jdFXKyeIgcimZYuc7FBmQIm7NCnvBxTo92J+idB/d2Z2ZrQGWLFixYoVK1ZU4fygvfn2r40uLBEeaOD8z/ameNGLIMDvYInQIj4DCTap32nBkqBFvNfwj/kvAbSi5vU2LAlaxK8/Ph4SwRkfI3rfwpKgzew9HwbpAUF3WQKfNvFJTK+z48DH3egOAxAdtE+j/fY2GEafeMDj3GkIAT6DBRhNRYcE1AHD6DN7gJ9nLgjzp3+++Axq4nuQLpc4O5hG0CYecRrw8lxE/vdQg6j/eciDlp54/gAMo008Eb0svBzrJT3xWqN7czjkFQQMo098jAPJ5bBO5PcR0jgh8oV/wQLaxF/FcjMVPrwJFbiJ7uH0LBmABbSJf9A7PhMRuhCkqph+GuERdrNzW4mS1txe2OsfxUvQus30swif+1DXRo2gVbzC70tN/w2LzCJ89h5hQSgsCQyjVbzK79n0VTO55sfd+WuI5td4Rime+mFts2O/F747KLxLmP4omEgzNq8BRf9Oiu5jAqn4y4ONo3Hz/il3Z6AmlJB0mWo08Af580WXiCF2M/PsgwTY4tni7kx0+PDZaP/LTpp9VQAT+F16IykGMS5+RGY4cw0Bzu49/d+N+Knp+j1xOEwvEO346B9Bs3EaHbb7PBBlL7ycBNIvzoN5vnY1O8uSthchWRHOSM0+TS3zA5AhonKAwW6ZFaj8nvE9v7CkzT+TWPJ3RhnwVAOQlprNRr8sHqj8Pr9+39T74fwjQvwALFG61CktQHzpLB7IPqf0e0HW4yPF2n9P4TYmuHWd5wGICZ5Lb4p4cHnw8GjeDdjvs57ePFnqKtbywhJnK7nJqJTkCF8dkKK5IHMD9nv0QD6DwvRH/TRohsWb+BosUkk8z/7HT/57JGr2XxWPFN0gIWXg8pv+C/kdO9VcBkJNov2NHWGzZf25IYyvexAEoSjQ+1CDSUy9+9+cDMAStXP79acnO8kEtlQ+DWzOwg0IvU7JM1JsCmdqz3xGdNgR/baYZzYEHSAN1h+f9MAiC1d1JcvgQogc30rrKs+dStpsAEhDm1nVCzDJnet5HoDx2BMDoE5sqkB+PATLLOzzMs7/bu958y2pal/i7KMnrx6AZbR2cj75+tW2yM1/g5rYrOTy6G1gwmIDYLOSy6NdPFN3ABDJWj6fx4h4ps4AJPSBiWeurv0fCdCJP1fBqPi0ukNvC25JhBC8EBxgVDwz7QfEW2XPiKXOyQ4u4+KZtBtL9Fx1Hz38FBxgRTxzeRX8oqryRJ/A+BYUGdbEp/4P8maIBxiCA6yJZ3j2Zde5p7/I/p27YlV8WU//YhQ8AstYFZ8ykQc+DJIQLGNd/Dq3qiSzL/KBr8Ay9mceuHGRvCxeLP50ZRon4sfXjT3Jshfa3q7uRHwa+IAKRc+FZJeGSZyIZ2S/56FPXbCIM/GywCfSXKtBz5l4Zj7wIUHHpt87FT8f+Mo2LpnAqfh01ybCzOxX3a6qA6fi0y8Q017+3KbfOxdf2Mhgaesp41w8m/77f06yjHPxTDJJ0r49WwBB8pPNrSnOoaNOKzqstslxhSbeAQ707LKtBIzoAAAAAElFTkSuQmCC" />
+                </defs>
+            </svg>
+        </div>
+
+    </div>
+
+    <!--=============== Скролл вверх ===============-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-fill scrollup__icon"></i>
+    </a>
+
+    <!--=============== Подключение JS ===============-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

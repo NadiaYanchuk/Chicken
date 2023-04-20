@@ -356,14 +356,14 @@ body.dark-theme {
   width: 100%;
   max-width: 280px;
   justify-self: center;
-  z-index: var(--z-tooltip); 
+  z-index: var(--z-tooltip);
 }
 
 .home__img-parallax {
   position: absolute;
   top: -2rem;
   right: 10%;
-  z-index: var(--z-fixed); 
+  z-index: var(--z-fixed);
 }
 
 .home__title {
@@ -894,6 +894,10 @@ body.dark-theme {
     width: 180px;
   }
 
+  .home__img-parallax {
+    display: none;
+  }
+
   .home__title {
     font-size: var(--h1-font-size);
   }
@@ -1119,6 +1123,13 @@ body.dark-theme {
 
   .scrollup {
     right: 3rem;
+  }
+}
+
+/* Скрываю параллакс на мобильной версии */
+@media screen and (max-width: 768px) {
+  .home__img-parallax {
+    display: none;
   }
 }
 
